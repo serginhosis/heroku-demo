@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:object="${curso}" method="post">
+	<input type="text" th:field="*{nome}"/>
+	<input type="submit" value="Enviar"/>
+</form>
+
+<table>
+	<tr>
+		<th>Nome</th>
+	</tr>
+	<tr th:each="curso : ${cursos}">
+		<td th:text="${curso.nome}"></td>
+	</tr>
+</table>
+</body>
+</html>
