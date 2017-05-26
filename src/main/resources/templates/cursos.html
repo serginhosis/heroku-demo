@@ -7,18 +7,18 @@
 </head>
 <body>
 
-<form th:object="${curso}" method="post">
-	<input type="text" th:field="*{nome}"/>
-	<input type="submit" value="Enviar"/>
-</form>
+	<form th:object="${curso}" method="post">
+		<input type="text" th:field="*{nome}" /> <input type="submit"
+			value="Enviar" />
+	</form>
 
-<table>
-	<tr>
-		<th>Nome</th>
-	</tr>
-	<tr th:each="curso : ${cursos}">
-		<td th:text="${curso.nome}"></td>
-	</tr>
-</table>
+	<table>
+		<tr>
+			<th>Nome</th>
+		</tr>
+		<tr th:each="curso : ${cursos}">
+			<td th:text="${curso.nome}"></td>
+		</tr>
+	</table>
 </body>
 </html>
