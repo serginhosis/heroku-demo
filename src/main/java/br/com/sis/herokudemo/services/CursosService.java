@@ -26,4 +26,9 @@ public class CursosService {
 		cursosRepository.save(curso);
 	}
 
+	public Curso findByName(String nome) {
+		
+		return cursosRepository.findByName(nome);
+	}
+
 }

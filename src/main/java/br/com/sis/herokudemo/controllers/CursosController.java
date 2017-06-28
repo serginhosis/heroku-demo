@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,8 +21,12 @@ public class CursosController {
 
 	@GetMapping("/cursos")
 	public List<Curso> hello() {
-
 		return cursosService.listAll();
+	}
+	
+	@GetMapping(value= "/cursos/{nome}")
+	public Curso findByName(@RequestParam("nome") String nome){		
+		return cursosService.findByName(nome);
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
