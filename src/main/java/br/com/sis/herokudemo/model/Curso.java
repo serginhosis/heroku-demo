@@ -38,4 +38,9 @@ public class Curso {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return "Curso [id=" + id + ", nome=" + nome + "]";
+	}
+
 }

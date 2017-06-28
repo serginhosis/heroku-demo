@@ -26,9 +26,14 @@ public class CursosService {
 		cursosRepository.save(curso);
 	}
 
-	public Curso findByName(String nome) {
-		
-		return cursosRepository.findByName(nome);
+	public Curso findByNome(String nome) {
+
+		return cursosRepository.findByNome(nome);
+	}
+
+	@CacheEvict(cacheNames = "listaCursos", allEntries = true)
+	public void deletar(long id) {
+		cursosRepository.delete(id);
 	}
 
 }
